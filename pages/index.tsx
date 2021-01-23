@@ -1,6 +1,8 @@
 import * as React from 'react'
 import { InferGetStaticPropsType } from 'next'
 
+import styles from 'styles/globals.scss'
+
 import Trip from '../components/trips/trip'
 import { ITrip } from '../types'
 
