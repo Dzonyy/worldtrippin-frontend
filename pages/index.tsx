@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { InferGetStaticPropsType } from 'next'
 
+import Layout from '../components/layout/Layout'
 import Trip from '../components/trips/trip'
 import Navigation from '../components/navigation/Navigation'
 
@@ -15,11 +16,10 @@ export default function IndexPage({trips,}: InferGetStaticPropsType<typeof getSt
   if (!tripList) return <h1>Loading...</h1>
 
   return (
-    <div>
+    <Layout>
       <Navigation></Navigation>
 
       <main className='container'>
-        <h1>My posts</h1>
 
         {tripList.map((trip: ITrip) => (
 
@@ -27,7 +27,7 @@ export default function IndexPage({trips,}: InferGetStaticPropsType<typeof getSt
 
         ))}
       </main>
-    </div>
+    </Layout>
     )
 }
 

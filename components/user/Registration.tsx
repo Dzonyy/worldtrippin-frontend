@@ -1,5 +1,3 @@
-// components/AddPost.tsx
-
 import * as React from 'react'
 import { User } from '../../types'
 
