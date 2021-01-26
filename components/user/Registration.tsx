@@ -8,7 +8,7 @@ type Props = {
 }
 
 const Registration: React.FC<Props> = ({ savePost }) => {
-  const [formData, setFormData] = React.useState<ITrip>()
+  const [formData, setFormData] = React.useState<User>()
 
   const handleForm = (e: React.FormEvent<HTMLInputElement>): void => {
     setFormData({
