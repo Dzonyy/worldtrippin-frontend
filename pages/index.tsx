@@ -1,9 +1,9 @@
 import * as React from 'react'
 import { InferGetStaticPropsType } from 'next'
 
-import styles from 'styles/globals.scss'
-
 import Trip from '../components/trips/trip'
+import Navigation from '../components/navigation/Navigation'
+
 import { ITrip } from '../types'
 
 const API_URL: string = 'http://localhost:3000/api/v1/trips'
@@ -15,15 +15,20 @@ export default function IndexPage({trips,}: InferGetStaticPropsType<typeof getSt
   if (!tripList) return <h1>Loading...</h1>
 
   return (
-    <main className='container'>
-      <h1>My posts</h1>
+    <div>
+      <Navigation></Navigation>
 
-      {tripList.map((trip: ITrip) => (
+      <main className='container'>
+        <h1>My posts</h1>
 
-        <Trip key={trip.id} trip={trip} />
+        {tripList.map((trip: ITrip) => (
 
-      ))}
-    </main>  )
+          <Trip key={trip.id} trip={trip} />
+
+        ))}
+      </main>
+    </div>
+    )
 }
 
 export async function getStaticProps() {
