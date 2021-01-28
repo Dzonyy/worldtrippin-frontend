@@ -19,7 +19,7 @@ export default function IndexPage({trips,}: InferGetStaticPropsType<typeof getSt
     <Layout>
       <Navigation></Navigation>
 
-      <main className='container'>
+      <main className='container mx-auto'>
 
         {tripList.map((trip: Trip) => (
 
