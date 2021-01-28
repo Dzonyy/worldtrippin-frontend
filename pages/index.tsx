@@ -2,10 +2,10 @@ import * as React from 'react'
 import { InferGetStaticPropsType } from 'next'
 
 import Layout from '../components/layout/Layout'
-import Trip from '../components/trips/trip'
+import TripTile from '../components/trips/TripTile'
 import Navigation from '../components/navigation/Navigation'
 
-import { ITrip } from '../types'
+import { Trip } from '../types'
 
 const API_URL: string = 'http://localhost:3000/api/v1/trips'
 
@@ -21,9 +21,9 @@ export default function IndexPage({trips,}: InferGetStaticPropsType<typeof getSt
 
       <main className='container'>
 
-        {tripList.map((trip: ITrip) => (
+        {tripList.map((trip: Trip) => (
 
-          <Trip key={trip.id} trip={trip} />
+          <TripTile key={trip.id} trip={trip} />
 
         ))}
       </main>
@@ -33,7 +33,7 @@ export default function IndexPage({trips,}: InferGetStaticPropsType<typeof getSt
 
 export async function getStaticProps() {
   const res = await fetch(API_URL)
-  const trips: ITrip[] = await res.json()
+  const trips: Trip[] = await res.json()
 
   return {
     props: {

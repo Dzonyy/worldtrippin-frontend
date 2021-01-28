@@ -1,13 +1,13 @@
 // components/Post.tsx
 
 import * as React from 'react'
-import { ITrip } from '../../types'
+import { Trip } from '../../types'
 
 type Props = {
-  trip: ITrip
+  trip: Trip
 }
 
-const Trip: React.FC<Props> = ({ trip }) => {
+const TripTile: React.FC<Props> = ({ trip }) => {
   return (
     <div className='Card'>
       <div className='Card--body'>
@@ -17,4 +17,4 @@ const Trip: React.FC<Props> = ({ trip }) => {
   )
 }
 
-export default Trip
+export default TripTile
