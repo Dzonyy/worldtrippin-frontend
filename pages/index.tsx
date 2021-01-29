@@ -3,7 +3,6 @@ import { InferGetStaticPropsType } from 'next'
 
 import Layout from '../components/layout/Layout'
 import TripTile from '../components/trips/TripTile'
-import Navigation from '../components/navigation/Navigation'
 
 import { Trip } from '../types'
 
@@ -17,8 +16,6 @@ export default function IndexPage({trips,}: InferGetStaticPropsType<typeof getSt
 
   return (
     <Layout>
-      <Navigation></Navigation>
-
       <main className='container mx-auto'>
 
         {tripList.map((trip: Trip) => (
